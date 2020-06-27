@@ -1,3 +1,16 @@
+/*function setup() {
+    createCanvas(400, 400);
+}
+  
+function draw() {
+    if (mouseIsPressed) {
+        fill(0);
+    } else {
+        fill(255);
+    }
+    ellipse(mouseX, mouseY, 80, 80);
+}*/
+
 //Start
 //Images
 let imageBackground;
@@ -16,9 +29,9 @@ let ordinateTimmy = 0;
 //Size - Sprite Timmy
 let widthTimmy = 110;
 let heightTimmy = 135;
-////Map - Sprite Timmy
-//let mapXtimmy1 = 0;
-//let mapYtimmy1 = 0;
+//Map - Sprite Timmy
+let mapXtimmy = 0;
+let mapYtimmy = 0;
 //Coodinates - Canvas
 let axisX = 220;
 let axisY = 270;
@@ -34,7 +47,6 @@ function preload() {
     playSound = loadSound(soundBackground);
 }
 
-/*
 class Scenery {
     constructor(imageScenery, speedScenery) {
         this.imageScenery = imageScenery;
@@ -58,19 +70,16 @@ class Scenery {
         }
     }
 }
-*/
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
     scenery = new Scenery(imageBackground, 3);
     spriteTimmy = new SpriteTimmy(imageSpriteTimmy);
-    frameRate(40);
     playSound.loop();
 }
 
 function draw() {
     scenery.showBackground();
     scenery.moveBackground();
-    //image(imageSpriteTimmy, abscissaTimmy, (height - heightTimmy), widthTimmy, heightTimmy, mapXtimmy1, mapYtimmy1, axisX, axisY);
-    spriteTimmy.showTimmy();
+    image(imageSpriteTimmy, abscissaTimmy, (height - heightTimmy), widthTimmy, heightTimmy, mapXtimmy, mapYtimmy, axisX, axisY);
 }
